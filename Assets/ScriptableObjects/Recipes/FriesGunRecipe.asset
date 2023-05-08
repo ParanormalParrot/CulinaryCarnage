@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be75d9c9432c40a3be1afccf1ddf8846, type: 3}
+  m_Name: FriesGunRecipe
+  m_EditorClassIdentifier: 
+  product: {fileID: 11400000, guid: 84b14776f35d1dd49aab48ebe851f827, type: 2}
+  ingredients:
+  - item: {fileID: 11400000, guid: 7aa247d3d86a4a5439d563dc8ae2d531, type: 2}
+    amount: 2

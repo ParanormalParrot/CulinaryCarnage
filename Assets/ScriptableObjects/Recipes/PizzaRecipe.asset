@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be75d9c9432c40a3be1afccf1ddf8846, type: 3}
+  m_Name: PizzaRecipe
+  m_EditorClassIdentifier: 
+  product: {fileID: 11400000, guid: 567f432aa6bf0fb4da2e2ac4eb7f9730, type: 2}
+  ingredients:
+  - item: {fileID: 11400000, guid: 7b6457e35aca077499dd8257c6a71733, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: d853e8932d9b19c448eb2bebf9fe9328, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 20072cbefc5a2aa41bca1641f82c9ee9, type: 2}
+    amount: 1
