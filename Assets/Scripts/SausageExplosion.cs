@@ -10,7 +10,7 @@ public class SausageExplosion : MonoBehaviour
     public float lifetime;
 
     public int damage;
-    
+
     public AudioClip explosionSound;
 
     public string targetTag;
@@ -34,7 +34,6 @@ public class SausageExplosion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-      
         if (other.CompareTag(targetTag))
         {
             other.GetComponent<Enemy>().TakeDamage(damage);

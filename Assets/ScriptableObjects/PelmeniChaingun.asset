@@ -17,5 +17,5 @@ MonoBehaviour:
   type: 1
   itemDescription: 
   gun: {fileID: 1407863085600568051, guid: 7de3702770847b84b84252034646c802, type: 3}
-  HPIncreased: 35
+  HPIncreased: 30
   HPRestored: 40

@@ -38,9 +38,10 @@ public class LevelGenerator : MonoBehaviour
     public int currentFloorNumber;
     public int finalFloorNumber = 2;
 
+    // План уровня
     public RoomData[,] levelPlan;
 
-
+    // Занятые позиции 
     private List<Vector2Int> positionsVisited;
 
     private List<Vector2Int> deadEndPositions;
@@ -64,6 +65,7 @@ public class LevelGenerator : MonoBehaviour
     public void GenerateLevel()
     {
         currentFloorNumber++;
+        UserInterface.instance.StartTransition();
         numberOfRooms = 2 * currentFloorNumber + 8;
         Enemy.numberOfEnemies = 0;
         GeneratePlan();
@@ -127,7 +129,7 @@ public class LevelGenerator : MonoBehaviour
 
             checkingPos = new Vector2Int(x, y);
         } while (positionsVisited.Contains(checkingPos) || x >= planSizeX || x < 0 || y >= planSizeY ||
-                 y < 0); //make sure the position is valid
+                 y < 0);
 
         return checkingPos;
     }
@@ -202,14 +204,14 @@ public class LevelGenerator : MonoBehaviour
         levelPlan = new RoomData[planSizeX, planSizeY];
         levelPlan[startingRoomPosition.x, startingRoomPosition.y] =
             new RoomData(startingRoomPosition, RoomType.Starting);
-        float randomCompare, randomCompareStart = 0.05f, randomCompareEnd = 0.8f;
+        float randomCompare, randomCompareStart = 0.2f, randomCompareEnd = 0.8f;
         positionsVisited.Add(startingRoomPosition);
         Vector2Int checkPosition = Vector2Int.zero;
         for (int i = 0; i < numberOfRooms - 1; i++)
         {
             randomCompare = randomCompareStart + ((randomCompareEnd - randomCompareEnd) / (numberOfRooms - 1)) * i;
             checkPosition = GetNewPosition();
-            if (GetNumberOfNeighbors(checkPosition) > 1 && Random.value > randomCompare)
+            if (GetNumberOfNeighbors(checkPosition) > 1 && randomCompare > Random.value)
             {
                 int iterations = 0;
                 do
@@ -230,10 +232,10 @@ public class LevelGenerator : MonoBehaviour
         Vector2Int maxPosition = startingRoomPosition;
         foreach (var position in deadEndPositions)
         {
-            if (Math.Sqrt((position.x - startingRoomPosition.x) * (position.x - startingRoomPosition.x)) +
-                Math.Sqrt((position.y - startingRoomPosition.y) * (position.y - startingRoomPosition.y)) >
-                Math.Sqrt((maxPosition.x - startingRoomPosition.x) * (maxPosition.x - startingRoomPosition.x)) *
-                Math.Sqrt((maxPosition.y - startingRoomPosition.y) * (maxPosition.y - startingRoomPosition.y)))
+            if (Math.Sqrt((position.x - startingRoomPosition.x) * (position.x - startingRoomPosition.x) +
+                          (position.y - startingRoomPosition.y) * (position.y - startingRoomPosition.y)) >
+                Math.Sqrt((maxPosition.x - startingRoomPosition.x) * (maxPosition.x - startingRoomPosition.x) +
+                          (maxPosition.y - startingRoomPosition.y) * (maxPosition.y - startingRoomPosition.y)))
             {
                 maxPosition = position;
             }

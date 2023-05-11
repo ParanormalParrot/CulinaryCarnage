@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MustardExplosion : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float lifetime;
 
+    // Урон от взрыва
     public int damage;
 
+    // Звук взрыва 
     public AudioClip explosionSound;
 
 

@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9
-  lifetime: 5
+  lifetime: 3
   currTime: 0
   damage: 3
   piercing: 0

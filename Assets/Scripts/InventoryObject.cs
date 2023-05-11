@@ -91,8 +91,6 @@ public class InventoryObject : ScriptableObject
             }
         }
     }
-
-
 }
 
 [Serializable]

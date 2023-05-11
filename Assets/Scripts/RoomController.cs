@@ -12,14 +12,8 @@ using Random = System.Random;
 public class RoomController : MonoBehaviour
 {
     public static RoomController instance;
-
-    private string currentWorldName = "Diner";
-
-   
     public List<Room> loadedRooms = new List<Room>();
-
     private Room curentRoom;
-    
     public Room startingRoom;
     public Room stock;
     public Room bossRoom;
@@ -27,6 +21,7 @@ public class RoomController : MonoBehaviour
 
     public GameObject foodContainer;
     public GameObject stairs;
+    public GameObject chooseStartingWeapon;
     private bool isLoadingRoom;
     // Start is called before the first frame update
 
@@ -44,25 +39,24 @@ public class RoomController : MonoBehaviour
         }
 
         if (roomData.type == RoomType.Battle)
-        {  
+        {
             var rand = new System.Random();
             room = battleRooms[rand.Next(battleRooms.Count)];
-
         }
 
-        if (roomData.type ==  RoomType.Stock)
+        if (roomData.type == RoomType.Stock)
         {
             room = stock;
         }
-        
-        if (roomData.type ==  RoomType.Boss)
+
+        if (roomData.type == RoomType.Boss)
         {
             room = bossRoom;
         }
-        
+
         room.X = roomData.position.x - startPosition.x;
         room.Y = roomData.position.y - startPosition.y;
-        
+
         room = Instantiate(room, room.GetRoomCenter(), Quaternion.identity);
         loadedRooms.Add(room);
     }
@@ -74,7 +68,7 @@ public class RoomController : MonoBehaviour
             room.RemoveUnconnectedDoors();
         }
     }
-    
+
     private void Awake()
     {
         instance = this;
@@ -84,15 +78,14 @@ public class RoomController : MonoBehaviour
     {
         return loadedRooms.Find(item => item.X == x && item.Y == y) != null;
     }
-    
+
     public Room FindRoom(int x, int y)
     {
         return loadedRooms.Find(item => item.X == x && item.Y == y);
     }
-    
+
     public void OnPlayerEnterRoom(Room room)
     {
-        
         CameraController.instance.currentRoom = room;
         curentRoom = room;
     }
@@ -106,5 +99,4 @@ public class RoomController : MonoBehaviour
 
         loadedRooms = new List<Room>();
     }
-
 }

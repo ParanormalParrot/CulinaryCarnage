@@ -14,7 +14,7 @@ public class WeaponSlot : MonoBehaviour
 
     // Статус слота
     public bool isActive;
-    
+
     // Щкала перезарядки оружия
     public Slider slider;
 

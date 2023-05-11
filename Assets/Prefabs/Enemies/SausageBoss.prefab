@@ -72,6 +72,7 @@ MonoBehaviour:
   shotPoint: {fileID: 8128458958130696430}
   anim: {fileID: 0}
   rotationZ: 0
+  shotDelayed: 0
 --- !u!1 &8128458957851932321
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,11 +153,10 @@ MonoBehaviour:
   WaitTime: 1
   aiPath: {fileID: 8128458957851932325}
   aiDestinationSetter: {fileID: 8128458957851932327}
-  maxHealth: 90
-  name: 
+  maxHealth: 100
   gun: {fileID: 1778646680206977664}
   mine: {fileID: 8806046971807714853, guid: 89a9269f3d2a6564c96c7ef53a7fd33f, type: 3}
-  TimeBetweenShots: 4
+  TimeBetweenShots: 5
   CurTimeBetweenShots: 0
 --- !u!114 &8128458957851932326
 MonoBehaviour:
@@ -351,7 +351,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3758ede9589320d4b92bfddf399b4197, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

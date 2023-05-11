@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
     public GameObject openDoor;
     public bool isWall;
 
-    
+    // Типы дверей
     public enum DoorType
     {
         left,

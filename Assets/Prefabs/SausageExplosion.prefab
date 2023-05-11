@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 0.5
-  damage: 20
+  damage: 15
   explosionSound: {fileID: 8300000, guid: 3689e2b7ee4e905449f1a69443e1747a, type: 3}
   targetTag: Enemy
 --- !u!82 &-1640449379194559465

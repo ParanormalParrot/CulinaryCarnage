@@ -33,7 +33,6 @@ public class Player : MonoBehaviour
     public List<WeaponSlot> weaponSlots;
     public bool isInvincible;
     public float InvincibilityTime;
-    public DefeatMenu defeatMenu;
     public bool isDead;
     public AudioClip hurtSound;
     public AudioClip eatingSound;
@@ -88,8 +87,8 @@ public class Player : MonoBehaviour
                     slot.gun.Deactivate();
                 }
             }
-            defeatMenu.GameObject().SetActive(true);
-            
+            UserInterface.instance.defeatMenu.SetActive(true);
+
         }
         else
         {
@@ -241,6 +240,7 @@ public class Player : MonoBehaviour
     {
         if (!isInvincible)
         {
+            SoundManager.instance.PlaySound(hurtSound);
             currentHealth -= damage;
             healthBar.UpdateHealth(maxHealth, currentHealth);
             StartCoroutine(Invicibility());
@@ -261,8 +261,13 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Item"))
         {
             GroundItem groundItem = other.GetComponent<GroundItem>();
-            inventory.AddItem(groundItem.item, 1);
-            Destroy(groundItem.GameObject());
+            if (!groundItem.itemTaken)
+            {
+                inventory.AddItem(groundItem.item, 1);
+                groundItem.itemTaken = true;
+                Destroy(groundItem.GameObject());
+            }
+            
         }
     }
 

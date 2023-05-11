@@ -10,11 +10,9 @@ public class Menu : MonoBehaviour
 {
     public GameObject MainMenu;
     public GameObject Options;
-
-
-
     private void Start()
     {
+        SoundManager.instance.LoadSettings();
         SoundManager.instance.PlayMenuMusic();
         MainMenu.SetActive(true);
         Options.SetActive(false);
@@ -31,18 +29,17 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
 
-
-   
-
     public void OpenOptions()
     {
         MainMenu.SetActive(false);
         Options.SetActive(true);
+        SoundManager.instance.LoadSettings();
     }
 
 
     public void Back()
     {
+        SoundManager.instance.SaveSettings();
         MainMenu.SetActive(true);
         Options.SetActive(false);
     }

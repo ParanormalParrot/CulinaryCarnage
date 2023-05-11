@@ -3,14 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = Unity.Mathematics.Random;
 
+
 public class EnemySpawner : MonoBehaviour
 {
     public Enemy[] enemies;
-    // Start is called before the first frame update
+    public Enemy[] weakerEnemies;
+    public Enemy[] strongerEnemies;
 
     public void SpawnEnemy()
     {
         var rand = new System.Random();
-        GameObject enemy = Instantiate(enemies[rand.Next(enemies.Length)].gameObject, transform.position, Quaternion.identity);
+        float spawnStrongerEnemy = (1.5f * LevelGenerator.instance.currentFloorNumber + 2) / 10f;
+        if (spawnStrongerEnemy > UnityEngine.Random.value)
+        {
+            Instantiate(strongerEnemies[rand.Next(strongerEnemies.Length)].gameObject,
+                transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(weakerEnemies[rand.Next(weakerEnemies.Length)].gameObject,
+                transform.position, Quaternion.identity);
+        }
     }
 }

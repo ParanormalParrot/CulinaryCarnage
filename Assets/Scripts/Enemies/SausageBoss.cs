@@ -11,6 +11,7 @@ public class SausageBoss : Boss
 
     public float TimeBetweenShots;
     public float CurTimeBetweenShots;
+    private bool secondPhase;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class SausageBoss : Boss
         UserInterface.instance.bossHealthbar.SetName("Sergeant Sausage");
         StartCoroutine(PlantMines());
         health = maxHealth;
+        secondPhase = false;
     }
 
     void Update()
@@ -35,6 +37,12 @@ public class SausageBoss : Boss
         else
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+
+        if (health <= maxHealth/2 && !secondPhase)
+        {
+            secondPhase = true;
+            TimeBetweenShots /= 2;
         }
 
         if (CurTimeBetweenShots <= 0)

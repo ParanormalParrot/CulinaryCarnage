@@ -137,6 +137,7 @@ MonoBehaviour:
   - {fileID: 1809137656603147211, guid: 0b37ca847c68cea4ea3044746078ea53, type: 3}
   - {fileID: 2895509387295160643, guid: 0a941778cc2661542848412c77ad17ef, type: 3}
   - {fileID: 965851977135322644, guid: 14e943914ab384b4395d3062c3251151, type: 3}
+  - {fileID: 1149215393461487127, guid: 3e97be2a93a3c8740aaf66fd3a5ab42a, type: 3}
   spawnPoint: {fileID: 4294688085047176886}
   spriteRenderer: {fileID: 4294688085251753359}
   openSprite: {fileID: 21300000, guid: cd2f2689fd8bcab498fec329cb6b466a, type: 3}

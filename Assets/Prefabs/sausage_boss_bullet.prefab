@@ -137,8 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  distance: 0
   lifetime: 10
   currTime: 0
-  damage: 10
+  damage: 7
   sausage_slice: {fileID: 3774529239036257111, guid: 1dc71bb8d4c9056409258ecf8a5f13f3, type: 3}

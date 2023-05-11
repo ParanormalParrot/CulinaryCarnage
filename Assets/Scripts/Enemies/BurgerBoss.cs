@@ -16,10 +16,10 @@ public class BurgerBoss : Boss
     public AngledEnemyBullet bullet;
     private int attackNumber;
     private int minionsCount;
+    private bool secondPhase;
 
     public Transform shotPoint;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         player = FindObjectOfType<Player>();
@@ -31,6 +31,7 @@ public class BurgerBoss : Boss
         UserInterface.instance.bossHealthbar.SetName("Meaty Monarch");
         numberOfEnemies++;
         name = "Meaty Monarch";
+        secondPhase = false;
     }
 
     // Update is called once per frame
@@ -42,17 +43,19 @@ public class BurgerBoss : Boss
             minionsCount++;
             Instantiate(minion, transform.position + new Vector3(0, -3, 0), Quaternion.identity);
             idleTime = idleTime * 2 / 3;
-           
-
         }
-        
+
+        if (health <= maxHealth / 2 && !secondPhase)
+        {
+            secondPhase = true;
+            idleTime = idleTime / 2;
+        }
 
         if (minionsCount == 1 && health < maxHealth * 1 / 3)
         {
             minionsCount++;
             Instantiate(minion, transform.position + new Vector3(0, -3, 0), Quaternion.identity);
             idleTime /= 2;
-
         }
 
         if (health <= 0)

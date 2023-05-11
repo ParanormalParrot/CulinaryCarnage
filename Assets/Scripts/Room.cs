@@ -9,7 +9,6 @@ using Random = System.Random;
 
 public class Room : MonoBehaviour
 {
-    
     // Ширина комнаты
     public int width;
 
@@ -33,7 +32,6 @@ public class Room : MonoBehaviour
 
     public List<Door> doors = new List<Door>();
 
-    // Start is called before the first frame update
     public Room()
     {
     }
@@ -43,6 +41,11 @@ public class Room : MonoBehaviour
     {
         isCleared = false;
         enemySpawners = GetComponentsInChildren<EnemySpawner>();
+        if (type == RoomType.Starting && LevelGenerator.instance.currentFloorNumber == 1)
+        {
+            GameObject obj = Instantiate(RoomController.instance.chooseStartingWeapon, new Vector3(0, 4, 0), Quaternion.identity);
+            obj.transform.SetParent(transform);
+        }
     }
 
     // Удаление дверей, которые не ведут в другие комнаты
@@ -147,18 +150,15 @@ public class Room : MonoBehaviour
         Gizmos.DrawWireCube(transform.position, new Vector3(width, height, 0));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     
+
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
             RoomController.instance.OnPlayerEnterRoom(this);
-            
+
             if ((type == RoomType.Battle || type == RoomType.Boss) && !isCleared && !hasPlayer)
             {
                 hasPlayer = true;
@@ -171,7 +171,6 @@ public class Room : MonoBehaviour
                 hasEnemies = true;
                 if (type == RoomType.Battle)
                 {
-                  
                     foreach (var spawner in enemySpawners)
                     {
                         spawner.SpawnEnemy();
@@ -180,12 +179,9 @@ public class Room : MonoBehaviour
 
                 if (type == RoomType.Boss)
                 {
-                    
                     BossSpawner spawner = FindObjectOfType<BossSpawner>();
                     spawner.SpawnBoss();
-                    
                 }
-               
             }
         }
     }
@@ -221,7 +217,8 @@ public class Room : MonoBehaviour
             }
             else
             {
-                Instantiate(RoomController.instance.stairs, GetRoomCenter(), Quaternion.identity);
+                GameObject stairs = Instantiate(RoomController.instance.stairs, GetRoomCenter(), Quaternion.identity);
+                stairs.transform.SetParent(transform);
             }
         }
 

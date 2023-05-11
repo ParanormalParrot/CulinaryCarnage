@@ -2,7 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "New Recipe",  menuName = "Cooking/RecipeBook") ]
+
+[CreateAssetMenu(fileName = "New Recipe", menuName = "Cooking/RecipeBook")]
 public class RecipeBook : ScriptableObject
 {
     public List<Recipe> recipes;
@@ -15,5 +16,4 @@ public class RecipeBook : ScriptableObject
             dictionary.Add(recipe.product, recipe.ingredients);
         }
     }
-    
 }

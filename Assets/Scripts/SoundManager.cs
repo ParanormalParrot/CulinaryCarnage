@@ -57,15 +57,19 @@ public class SoundManager : MonoBehaviour
     }
     
     
-    public void SaveSettings(Slider slider)
+    public void SaveSettings()
     {
         PlayerPrefs.SetFloat("Volume", slider.value);
     }
 
     public void LoadSettings()
     {
-        slider.value = PlayerPrefs.GetFloat("Volume", slider.value);
+        slider = FindObjectOfType<Slider>();
+        slider.onValueChanged.AddListener(
+            delegate { ChangeVolume(); });
+        slider.value = PlayerPrefs.GetFloat("Volume");
     }
+    
 
 
 }
