@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Класс слота для оружия
 public class WeaponSlot : MonoBehaviour
 {
     // Оружие, привязанное к слоту

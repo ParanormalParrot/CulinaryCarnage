@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Класс снаряда, выпускаемого игроком
 public class PlayerBullet : MonoBehaviour
 {
     public float speed;

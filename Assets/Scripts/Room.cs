@@ -7,6 +7,7 @@ using UnityEngine.PlayerLoop;
 using UnityEngine.Serialization;
 using Random = System.Random;
 
+// Класс комнаты
 public class Room : MonoBehaviour
 {
     // Ширина комнаты

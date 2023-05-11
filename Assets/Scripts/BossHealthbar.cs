@@ -4,14 +4,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+// Класс шкалы здоровья босса
 public class BossHealthbar : MonoBehaviour
 {
     public Slider slider;
     public TextMeshProUGUI bossName;
-    
-    // Start is called before the first frame update
-    
+
     public void SetName(string name)
     {
         bossName.text = name;
@@ -24,10 +22,5 @@ public class BossHealthbar : MonoBehaviour
     public void SetMaxHealth(int maxHealth)
     {
         slider.maxValue = maxHealth;
-    }
-
-    void Update()
-    {
-        
     }
 }

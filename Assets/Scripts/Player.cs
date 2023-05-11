@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
+// Класс управления действиями инрового персонажа
 public class Player : MonoBehaviour
 {
     public float speed;

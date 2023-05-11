@@ -26,8 +26,7 @@ public abstract class Gun : MonoBehaviour
     public Vector3 EquipPosition;
 
     public AudioClip shootingSound;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         isActive = true;

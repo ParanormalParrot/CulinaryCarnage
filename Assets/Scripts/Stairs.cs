@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Класс перехода на следующий этаж (уровень).
 public class Stairs : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D col)

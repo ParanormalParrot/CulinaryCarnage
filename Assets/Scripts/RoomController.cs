@@ -9,6 +9,7 @@ using UnityEngine.Serialization;
 using Random = System.Random;
 
 
+// Класс, управляющий комнатами
 public class RoomController : MonoBehaviour
 {
     public static RoomController instance;

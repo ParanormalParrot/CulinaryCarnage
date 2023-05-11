@@ -18,17 +18,20 @@ public class Menu : MonoBehaviour
         Options.SetActive(false);
     }
 
+    // Запуск игровой сессии
     public void Play()
     {
         SceneManager.LoadScene("DinerMain", LoadSceneMode.Single);
         Options.SetActive(false);
     }
 
+    // Выход из игры
     public void Quit()
     {
         Application.Quit();
     }
 
+    // Открыть настройки
     public void OpenOptions()
     {
         MainMenu.SetActive(false);
@@ -37,6 +40,7 @@ public class Menu : MonoBehaviour
     }
 
 
+    // Выход из меню настроек
     public void Back()
     {
         SoundManager.instance.SaveSettings();

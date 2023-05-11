@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
+// Класс пользовательского нтерфейса во время игры
 public class UserInterface : MonoBehaviour
 {
     public static UserInterface instance;

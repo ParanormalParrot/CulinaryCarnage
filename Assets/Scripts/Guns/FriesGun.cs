@@ -10,8 +10,7 @@ public class FriesGun : Gun
         isActive = true;
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (isActive)

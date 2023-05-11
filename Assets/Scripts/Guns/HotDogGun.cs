@@ -5,7 +5,6 @@ using UnityEngine.Serialization;
 
 public class HotDogGun : Gun
 {
-    // Start is called before the first frame update
     void Start()
     {
         renderer = GetComponent<SpriteRenderer>();

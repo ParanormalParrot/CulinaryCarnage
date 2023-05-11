@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
+// Класс отображения инвентаря
 public class DisplayInventory : MonoBehaviour
 {
     public Player player;

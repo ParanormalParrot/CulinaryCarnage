@@ -10,6 +10,7 @@ using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
+// Класс меню готовки
 public class CookingMenu : MonoBehaviour
 {
     

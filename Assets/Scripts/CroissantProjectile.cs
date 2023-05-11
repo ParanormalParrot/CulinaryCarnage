@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// Класс снаряда-круассана 
 public class CroissantProjectile : PlayerBullet
 {
     private Player _player;

@@ -3,18 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Класс управления камерой
 public class CameraController : MonoBehaviour
 {
-
     public static CameraController instance;
 
     public Room currentRoom;
 
     public float speed;
-    // Start is called before the first frame update
+    
     void Start()
     {
-        
     }
 
     private void Awake()
@@ -45,10 +44,9 @@ public class CameraController : MonoBehaviour
         {
             return Vector3.zero;
         }
-        
+
         Vector3 targetPosition = currentRoom.GetRoomCenter();
         targetPosition.z = transform.position.z;
         return targetPosition;
     }
-    
 }

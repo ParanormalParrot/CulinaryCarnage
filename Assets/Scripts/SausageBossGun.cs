@@ -11,8 +11,7 @@ public class SausageBossGun : MonoBehaviour
     public Animator anim;
     public float rotationZ;
     public bool shotDelayed;
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         player = FindObjectOfType<Player>();
