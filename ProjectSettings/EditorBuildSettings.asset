@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/DinerRooms/DinerStart.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/DinerRooms/DinerEmpty.unity
+    guid: 161bf5ff7b1fd0446ad18c8e2946a868
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: baf81f4ef68345e47880fe8b27a2fbcd
+  - enabled: 1
+    path: Assets/Scenes/DinerMain.unity
+    guid: 6c6d0cc3855e1b047980f047365d51af
+  m_configObjects: {}
